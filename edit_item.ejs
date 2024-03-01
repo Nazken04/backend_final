@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Main Page</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://crystalpng.com/wp-content/uploads/2023/04/BTS-Logo.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- Stylesheets-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+
+        .nav-item {
+            padding: 0 15px;
+            font-weight: lighter;
+            font-size: 1.2rem;
+        }
+
+        .nav-link {
+            font-size: 1.7rem;
+        }
+
+        #title {
+            background: #9b6c9a;
+            margin-top: 16px;
+        }
+
+        section,
+        footer {
+            margin: auto;
+        }
+
+        footer {
+            background: #000;
+            padding: 10px 0;
+        }
+
+
+        footer p {
+            margin: 0;
+            text-align: center;
+            color: #FFF;
+        }
+
+        footer {
+            margin-top: 50px;
+        }
+
+        .footer_content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="title">
+        <div class="container-fluid ">
+            <!-- Navigation bar -->
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand text-black" style="font-size: 50px;">
+                    <span class="ml-2">BTS</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-sliders"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-black font-weight-bold" href="/main_page/<%= userId %>">Main
+                                Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black font-weight-bold" href="/api1">API 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black font-weight-bold" href="/api2">API 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black font-weight-bold" href="/api3">API 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black font-weight-bold" href="/admin">Admin Page</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        </div>
+
+    </section>
+
+
+    <div class="container mt-5">
+        <h2>Edit Portfolio Item</h2>
+        <form action="/edit_item/<%= item._id %>" method="POST">
+
+            <input type="text" class="form-control" id="titleEng" name="titleEng" value="<%= item.nameEng %>" required>
+            <input type="text" class="form-control" id="titleKaz" name="titleKaz" value="<%= item.nameKaz %>" required>
+            <textarea class="form-control" id="descEng" name="descEng" rows="3"
+                required><%= item.descriptionEng %></textarea>
+            <textarea class="form-control" id="descKaz" name="descKaz" rows="3"
+                required><%= item.descriptionKaz %></textarea>
+            <input type="text" class="form-control" id="imageUrl1" name="imageUrl1" value="<%= item.images[0] %>"
+                required>
+            <input type="text" class="form-control" id="imageUrl2" name="imageUrl2" value="<%= item.images[1] %>"
+                required>
+            <input type="text" class="form-control" id="imageUrl3" name="imageUrl3" value="<%= item.images[2] %>"
+                required>
+
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+    </div>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+        <p>Nazken Koblanova | Group SE-2228</p>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
